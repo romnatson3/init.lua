@@ -17,25 +17,36 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'pylsp'},
+  ensure_installed = {'pylsp', 'html'},
+  -- ensure_installed = {'pylsp', 'html', 'pyright'},
   handlers = {
     lsp_zero.default_setup,
+    pylsp = function()
+        require('lspconfig').pylsp.setup{
+          settings = {
+            pylsp = {
+              plugins = {
+                pycodestyle = {
+                  enable = true,
+                  ignore = {'E501'},
+                  maxLineLength = 120
+                },
+              }
+            }
+          }
+        }
+    end,
+    -- pyright = function()
+    --     require('lspconfig').pyright.setup{
+    --         settings = {
+    --             pyright = {
+    --             }
+    --         }
+    --     }
+    -- end,
   },
 })
 
-require('lspconfig').pylsp.setup{
-  settings = {
-    pylsp = {
-      plugins = {
-        pycodestyle = {
-          enable = false,
-          ignore = {'E501'},
-          maxLineLength = 120
-        },
-      }
-    }
-  }
-}
 
 lsp_zero.set_sign_icons({
   error = '',

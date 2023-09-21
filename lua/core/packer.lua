@@ -50,6 +50,8 @@ return require('packer').startup(function(use)
             {'hrsh7th/nvim-cmp'},
             {'hrsh7th/cmp-nvim-lsp'},
             {'L3MON4D3/LuaSnip'},
+            {'hrsh7th/cmp-buffer'},
+            {'hrsh7th/cmp-path'},
         }
     }
 
@@ -57,11 +59,6 @@ return require('packer').startup(function(use)
         'nvim-tree/nvim-tree.lua',
         requires = { {'nvim-tree/nvim-web-devicons'} }
     }
-
-    -- use {
-    --     'vim-airline/vim-airline',
-    --     requires = { {'vim-airline/vim-airline-themes'} }
-    -- }
 
     use {
         'nvim-lualine/lualine.nvim',
@@ -78,8 +75,6 @@ return require('packer').startup(function(use)
 
     -- use('vim-scripts/AutoComplPop')
 
-    use('m4xshen/autoclose.nvim')
-
     use('lukas-reineke/indent-blankline.nvim')
 
     use {
@@ -87,12 +82,20 @@ return require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons' }
     }
 
-    use('roxma/vim-tmux-clipboard')
-
     use {
         'kalekundert/vim-coiled-snake',
         requires = { 'Konfekt/FastFold' }
     }
 
     use('github/copilot.vim')
+
+    use('m4xshen/autoclose.nvim')
+
+    use('puremourning/vimspector')
+    
+    use {'akinsho/toggleterm.nvim', tag = '*',
+         config = function()
+            require('toggleterm').setup()
+        end
+    }
 end)

@@ -30,3 +30,14 @@ opt.cursorline = true
 
 opt.foldmethod = 'indent'
 opt.foldenable = false
+
+vim.termguicolors = true
+
+vim.scrolloff = 8
+vim.opt.signcolumn = 'yes'
+
+vim.opt.updatetime = 50
+
+opt.completeopt = 'menu,menuone,noinsert,longest'
+
+opt.wrap = false

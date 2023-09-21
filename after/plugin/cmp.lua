@@ -1,4 +1,5 @@
 local cmp = require('cmp')
+local luasnip = require('luasnip')
 
 cmp.setup({
     -- completion = {
@@ -17,4 +18,28 @@ cmp.setup({
         ['<Left>'] = cmp.mapping.abort(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     }),
+    snippet = {
+        expand = function(args)
+            luasnip.lsp_expand(args.body)
+        end
+    },
+    sources = {
+        {name = 'path'},
+        {name = 'nvim_lsp', keyword_length = 2},
+        {name = 'buffer', keyword_length = 2},
+        {name = 'luasnip', keyword_length = 2},
+    },
+    formatting = {
+        fields = {'menu', 'abbr', 'kind'},
+        -- format = function(entry, item)
+        --     local menu_icon = {
+        --         nvim_lsp = 'λ',
+        --         luasnip = '⋗',
+        --         buffer = 'Ω',
+        --         path = '🖫',
+        --     }
+        --     item.menu = menu_icon[entry.source.name]
+        --     return item
+        -- end,
+    },
 })
