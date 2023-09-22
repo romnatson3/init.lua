@@ -23,7 +23,7 @@ vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- paste over a selection it will replace the default register with the contents of the selection
-vim.keymap.set('x', 'p', [['_dP]])
+vim.keymap.set('x', 'p', [["_dP]])
 -- vim.keymap.set('v', 'p', 'pgvy')
 
 -- copy to system clipboard

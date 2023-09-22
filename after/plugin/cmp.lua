@@ -18,6 +18,7 @@ cmp.setup({
         ['<Left>'] = cmp.mapping.abort(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     }),
+    confirmation = { completeopt = 'menu,menuone,noinsert,select' },
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body)

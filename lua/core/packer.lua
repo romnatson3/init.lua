@@ -98,4 +98,10 @@ return require('packer').startup(function(use)
             require('toggleterm').setup()
         end
     }
+
+    use {'norcalli/nvim-colorizer.lua',
+         config = function()
+            require('colorizer').setup()
+        end
+    }
 end)
