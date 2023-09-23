@@ -5,7 +5,7 @@ vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
-local function my_on_attach(bufnr)
+local on_attach = function(bufnr)
   local api = require "nvim-tree.api"
 
   local function opts(desc)
@@ -13,10 +13,10 @@ local function my_on_attach(bufnr)
   end
 
   -- default mappings
-    api.config.mappings.default_on_attach(bufnr)
+  api.config.mappings.default_on_attach(bufnr)
 
   -- custom mappings
-    vim.keymap.set('n', '<Tab>', '<C-w>w', opts('Next window'))
+  vim.keymap.set('n', '<Tab>', '<C-w>w', opts('Next window'))
 end
 
 require("nvim-tree").setup({
@@ -30,6 +30,10 @@ require("nvim-tree").setup({
   filters = {
     dotfiles = false,
   },
-  on_attach = my_on_attach,
+  git = {
+    enable = true,
+    ignore = false,
+    timeout = 500,
+  },
+  on_attach = on_attach,
 })
-

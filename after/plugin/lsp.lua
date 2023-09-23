@@ -32,7 +32,6 @@ require('mason-lspconfig').setup({
   },
 })
 
-
 lsp_zero.set_sign_icons({
   error = '',
   -- error = '✘',

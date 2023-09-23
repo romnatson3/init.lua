@@ -23,3 +23,17 @@ end)
 vim.keymap.set('n', '<leader>h', builtin.help_tags, {})
 
 vim.keymap.set('n', '<leader>D', builtin.diagnostics, {})
+
+require('telescope').setup {
+    defaults = { 
+        file_ignore_patterns = { 
+            ".git/"
+        }
+    },
+    pickers = {
+        find_files = {
+            hidden = true,
+            no_ignore = true
+        }
+    }
+}
