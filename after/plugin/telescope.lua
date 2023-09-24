@@ -27,7 +27,8 @@ vim.keymap.set('n', '<leader>D', builtin.diagnostics, {})
 require('telescope').setup {
     defaults = { 
         file_ignore_patterns = { 
-            ".git/"
+            ".git/",
+            "env/"
         }
     },
     pickers = {

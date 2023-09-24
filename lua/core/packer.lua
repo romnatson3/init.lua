@@ -14,6 +14,7 @@ return require('packer').startup(function(use)
     }
 
     -- colorscheme
+    use('sainnhe/sonokai')
     use('ellisonleao/gruvbox.nvim')
     use({
         'catppuccin/nvim',
@@ -104,4 +105,11 @@ return require('packer').startup(function(use)
             require('colorizer').setup()
         end
     }
+
+    use({'preservim/tagbar',
+        config = function()
+            vim.keymap.set('n', '<F7>', ':TagbarToggle<CR>')
+        end
+    })
+
 end)

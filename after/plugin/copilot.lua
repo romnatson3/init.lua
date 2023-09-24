@@ -18,3 +18,12 @@ vim.api.nvim_set_hl(0, 'CopilotSuggestion', { bg = 'none', fg = '#555555' })
 --   ["go"] = true,
 --   ["python"] = true,
 -- }
+
+-- -- Disabled <Tab> for copilot suggestion accept.
+-- vim.api.nvim_create_autocmd('VimEnter', {
+--     pattern = '*',
+--     callback = function()
+--         vim.g.copilot_no_tab_map = true
+--         vim.g.copilot_assume_mapped = true
+--     end
+-- })

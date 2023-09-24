@@ -1,8 +1,10 @@
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'seoul256',
-    -- theme = 'gruvbox',
+    -- theme = 'seoul256',
+    theme = 'gruvbox',
+    -- theme = 'rose-pine',
+    -- theme = 'sonokai',
     -- component_separators = { left = '', right = ''},
     -- section_separators = { left = '', right = ''},
     -- section_separators = { left = '', right = '' },

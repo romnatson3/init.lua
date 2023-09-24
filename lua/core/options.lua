@@ -39,3 +39,5 @@ vim.opt.updatetime = 50
 vim.opt.completeopt = 'menu,menuone,noinsert,longest'
 
 vim.opt.wrap = false
+
+vim.opt.listchars = 'eol:↲,tab:→→,trail:•,nbsp:↔'
