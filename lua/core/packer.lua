@@ -69,6 +69,8 @@ return require('packer').startup(function(use)
             {'lewis6991/gitsigns.nvim' },
         }
     }
+    
+    -- use('nanozuki/tabby.nvim')
 
     -- use('vim-scripts/AutoComplPop')
 

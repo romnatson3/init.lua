@@ -6,6 +6,7 @@ vim.keymap.set('n', '<leader>g', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 vim.keymap.set('n', '<leader>gc', builtin.git_commits, {})
 vim.keymap.set('n', '<leader>m', builtin.marks, {})
+vim.keymap.set('n', '<leader>p', builtin.registers, {})
 vim.keymap.set('n', 'gr', builtin.lsp_references, {})
 
 vim.keymap.set('n', '<leader>/', function()
@@ -38,3 +39,4 @@ require('telescope').setup {
         }
     }
 }
+

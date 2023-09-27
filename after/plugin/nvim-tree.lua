@@ -5,7 +5,7 @@ vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
-local on_attach = function(client, bufnr)
+local function on_attach(bufnr)
     local api = require "nvim-tree.api"
 
     local function opts(desc)
