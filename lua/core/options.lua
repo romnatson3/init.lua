@@ -1,5 +1,5 @@
 vim.opt.number = true
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -38,6 +38,6 @@ vim.opt.updatetime = 50
 
 vim.opt.completeopt = 'menu,menuone,noinsert,longest'
 
-vim.opt.wrap = false
+-- vim.opt.wrap = false
 
 vim.opt.listchars = 'eol:↲,tab:→→,trail:•,nbsp:↔'

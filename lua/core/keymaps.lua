@@ -1,6 +1,7 @@
 vim.g.mapleader = ' '
 
-vim.keymap.set('n', '<F5>', '<cmd>NvimTreeToggle<CR>')
+vim.keymap.set('n', '<F5>', '<cmd>Neotree toggle<CR>')
+-- vim.keymap.set('n', '<F5>', '<cmd>NvimTreeToggle<CR>')
 vim.keymap.set('n', '<Tab>', '<C-w>w')
 vim.keymap.set('n', '<C-n>', ':tabnew<CR>')
 vim.keymap.set({'n','v','i'}, '<F2>', '<esc>:w<CR>')

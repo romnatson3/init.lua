@@ -16,10 +16,10 @@ vim.keymap.set('n', '<leader>/', function()
     })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
--- vim.keymap.set('n', '<leader>G', builtin.grep_string, {})
-vim.keymap.set('n', '<leader>G', function()
-    builtin.grep_string({ search = vim.fn.input("Grep > ") })
-end)
+vim.keymap.set('n', '<leader>G', builtin.grep_string, {})
+-- vim.keymap.set('n', '<leader>G', function()
+--     builtin.grep_string({ search = vim.fn.input("Grep > ") })
+-- end)
 
 vim.keymap.set('n', '<leader>h', builtin.help_tags, {})
 

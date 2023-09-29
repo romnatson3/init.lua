@@ -34,16 +34,12 @@ vim.lsp.diagnostic.on_publish_diagnostics, {
     },
 })
 
-local signs = {
-    -- Error = '×',
-    -- Error = '✘',
-    Error = '',
-    Warn = '',
-    -- Warn = '‼',
-    Hint = '',
-    Info = '¡'
-}
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
+vim.fn.sign_define("DiagnosticSignError", {text = "", texthl = "DiagnosticSignError"})
+-- vim.fn.sign_define("DiagnosticSignError", {text = "×", texthl = "DiagnosticSignError"})
+-- vim.fn.sign_define("DiagnosticSignError", {text = "✘", texthl = "DiagnosticSignError"})
+-- vim.fn.sign_define("DiagnosticSignError", {text = "", texthl = "DiagnosticSignError"})
+vim.fn.sign_define("DiagnosticSignWarn", {text = "", texthl = "DiagnosticSignWarn"})
+-- vim.fn.sign_define("DiagnosticSignWarn", {text = "", texthl = "DiagnosticSignWarn"})
+vim.fn.sign_define("DiagnosticSignInfo", {text = "", texthl = "DiagnosticSignInfo"})
+-- vim.fn.sign_define("DiagnosticSignInfo", {text = "¡", texthl = "DiagnosticSignInfo"})
+vim.fn.sign_define("DiagnosticSignHint", {text = "󰌵", texthl = "DiagnosticSignHint"})
