@@ -52,10 +52,10 @@ return require('packer').startup(function(use)
         'hrsh7th/cmp-path'
     }
 
-    use {
-        'nvim-tree/nvim-tree.lua',
-        requires = { {'nvim-tree/nvim-web-devicons'} }
-    }
+    -- use {
+    --     'nvim-tree/nvim-tree.lua',
+    --     requires = { {'nvim-tree/nvim-web-devicons'} }
+    -- }
 
     use {
         'nvim-neo-tree/neo-tree.nvim',
@@ -89,11 +89,6 @@ return require('packer').startup(function(use)
     use {
         'folke/trouble.nvim',
         requires = { 'nvim-tree/nvim-web-devicons' }
-    }
-
-    use {
-        'kalekundert/vim-coiled-snake',
-        requires = { 'Konfekt/FastFold' }
     }
 
     use('github/copilot.vim')

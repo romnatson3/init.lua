@@ -27,11 +27,11 @@ require('lspconfig').pylsp.setup{
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 vim.lsp.diagnostic.on_publish_diagnostics, {
-    -- virtual_text = false,
-    virtual_text = {
-        prefix = "",
-        spacing = 20,
-    },
+    virtual_text = false,
+    -- virtual_text = {
+    --     prefix = "",
+    --     spacing = 20,
+    -- },
 })
 
 vim.fn.sign_define("DiagnosticSignError", {text = "", texthl = "DiagnosticSignError"})

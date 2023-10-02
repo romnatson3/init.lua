@@ -28,8 +28,7 @@ vim.keymap.set('x', 'p', [["_dP]])
 -- vim.keymap.set('v', 'p', 'pgvy')
 
 -- copy to system clipboard
-vim.keymap.set({'n', 'v'}, '<leader>y', [["+y]])
-vim.keymap.set('n', '<leader>Y', [["+Y]])
+vim.keymap.set({'n', 'v'}, 'y', [["+y]])
 
 -- vim.keymap.set('n', '<C-z>', ':vertical resize -1<CR>')
 -- vim.keymap.set('n', '<C-x>', ':vertical resize +1<CR>')

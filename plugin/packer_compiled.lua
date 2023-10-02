@@ -74,11 +74,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  FastFold = {
-    loaded = true,
-    path = "/home/roman/.local/share/nvim/site/pack/packer/start/FastFold",
-    url = "https://github.com/Konfekt/FastFold"
-  },
   LuaSnip = {
     loaded = true,
     path = "/home/roman/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -185,11 +180,6 @@ _G.packer_plugins = {
     path = "/home/roman/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/home/roman/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
-    url = "https://github.com/nvim-tree/nvim-tree.lua"
-  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/roman/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -257,11 +247,6 @@ _G.packer_plugins = {
     path = "/home/roman/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
-  ["vim-coiled-snake"] = {
-    loaded = true,
-    path = "/home/roman/.local/share/nvim/site/pack/packer/start/vim-coiled-snake",
-    url = "https://github.com/kalekundert/vim-coiled-snake"
-  },
   ["vim-commentary"] = {
     loaded = true,
     path = "/home/roman/.local/share/nvim/site/pack/packer/start/vim-commentary",
@@ -280,10 +265,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
-time([[Config for nvim-colorizer.lua]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
@@ -292,6 +273,10 @@ time([[Config for toggleterm.nvim]], false)
 time([[Config for tagbar]], true)
 try_loadstring("\27LJ\2\nO\0\0\5\0\6\0\b6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0B\0\4\1K\0\1\0\22:TagbarToggle<CR>\t<F7>\6n\bset\vkeymap\bvim\0", "config", "tagbar")
 time([[Config for tagbar]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
+time([[Config for nvim-colorizer.lua]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
