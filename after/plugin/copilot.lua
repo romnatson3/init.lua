@@ -19,7 +19,7 @@ vim.api.nvim_set_hl(0, 'CopilotSuggestion', { bg = 'none', fg = '#555555' })
 --   ["python"] = true,
 -- }
 
--- -- Disabled <Tab> for copilot suggestion accept.
+-- Disabled <Tab> for copilot suggestion accept.
 -- vim.api.nvim_create_autocmd('VimEnter', {
 --     pattern = '*',
 --     callback = function()

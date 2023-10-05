@@ -93,8 +93,6 @@ return require('packer').startup(function(use)
 
     use('github/copilot.vim')
 
-    use('m4xshen/autoclose.nvim')
-
     use('puremourning/vimspector')
     
     use {'akinsho/toggleterm.nvim', tag = '*',

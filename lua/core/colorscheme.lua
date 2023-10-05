@@ -34,7 +34,7 @@ vim.cmd('colorscheme gruvbox')
 
 -- set colorscheme specific highlights if colorscheme is gruvbox
 vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
-vim.api.nvim_set_hl(0, 'LineNr', { fg = '#3c3836' })
+vim.api.nvim_set_hl(0, 'LineNr', { fg = '#4e4e4e' })
 vim.api.nvim_set_hl(0, 'DiagnosticSignError', { bg = 'none', fg = '#fb4934' })
 vim.api.nvim_set_hl(0, 'DiagnosticSignWarn', { bg = 'none', fg = '#fabd2f' })
 vim.api.nvim_set_hl(0, 'DiagnosticSignHint', { bg = 'none', fg = '#8ec07c' })
