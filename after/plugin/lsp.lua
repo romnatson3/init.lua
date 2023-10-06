@@ -59,12 +59,10 @@ vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { link = "DiagnosticVirtualT
 
 local ns_id = vim.api.nvim_create_namespace('Diagnostic')
 local hi = { 'Error', 'Warn','Info','Hint'}
+local group = vim.api.nvim_create_augroup('Diagnostic', {clear=true})
 vim.api.nvim_create_autocmd('CursorHold', {
     pattern = '*.py',
     callback = function(args)
-        -- vim.cmd[[autocmd CursorMoved * ++once echo " "]]
-        vim.api.nvim_create_autocmd('CursorMoved', { command = 'echo " "' })
-        pcall(vim.api.nvim_buf_clear_namespace, args.buf, ns_id, 0, -1)
         -- local buffer = vim.fn.expand("%")
         local buffer = args.buf
         local line, _ = unpack(vim.api.nvim_win_get_cursor(0))
@@ -77,7 +75,7 @@ vim.api.nvim_create_autocmd('CursorHold', {
         end
         if next(diagnostics) ~= nil then
             message = table.concat(messages, ' | ')
-            -- print(message)
+            print(message)
             local opts = {
                 virt_text = virt_texts,
                 hl_mode = 'combine',
@@ -85,12 +83,16 @@ vim.api.nvim_create_autocmd('CursorHold', {
             }
             vim.api.nvim_buf_set_extmark(buffer, ns_id, line - 1, 0, opts)
         end
-    end
+    end,
+    group = group
 })
 
-vim.api.nvim_create_autocmd('InsertEnter', {
-    pattern = '*',
+-- vim.cmd[[autocmd CursorMoved * ++once echo " "]]
+-- vim.api.nvim_create_autocmd('CursorMoved', { command = 'echo " "', group = group})
+vim.api.nvim_create_autocmd({'CursorMoved', 'InsertEnter'}, {
     callback = function(args)
         pcall(vim.api.nvim_buf_clear_namespace, args.buf, ns_id, 0, -1)
-    end
+        print(" ")
+    end, 
+    group = group
 })
