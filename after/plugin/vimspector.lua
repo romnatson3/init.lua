@@ -53,3 +53,27 @@ vim.keymap.set('n', '<leader><F6>', ':call vimspector#Continue()<CR>', {silent =
 --         }
 --     }
 -- }
+--
+-- Celery
+-- {
+--     "configurations": {
+--         "debugpy": {
+--             "adapter": "debugpy",
+--             "configuration": {
+--                 "type": "python",
+--                 "python": "${VIRTUAL_ENV}/bin/python",
+--                 "request": "launch",
+--                 "cwd": "${workspaceRoot}",
+--                 "program": "/opt/test/env/bin/celery",
+--                 "args": [ "-A", "test_celery", "worker", "-l", "INFO" ]
+--             },
+--             "breakpoints": {
+--                 "exception": {
+--                     "raised": "N",
+--                     "uncaught": "Y",
+--                     "userUnhandled": "N"
+--                 }
+--             }
+--         }
+--     }
+-- }

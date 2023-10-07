@@ -6,11 +6,12 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
     vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
     vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
+    -- vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
 end
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = {'pylsp', 'html'},
+    ensure_installed = {'pylsp', 'pyright', 'html'},
 })
 
 require('lspconfig').pylsp.setup{
@@ -24,6 +25,8 @@ require('lspconfig').pylsp.setup{
         }
     }
 }
+
+-- require('lspconfig').pyright.setup({})
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -63,6 +66,7 @@ local group = vim.api.nvim_create_augroup('Diagnostic', {clear=true})
 vim.api.nvim_create_autocmd('CursorHold', {
     pattern = '*.py',
     callback = function(args)
+        pcall(vim.api.nvim_buf_clear_namespace, args.buf, ns_id, 0, -1)
         -- local buffer = vim.fn.expand("%")
         local buffer = args.buf
         local line, _ = unpack(vim.api.nvim_win_get_cursor(0))
@@ -90,6 +94,7 @@ vim.api.nvim_create_autocmd('CursorHold', {
 -- vim.cmd[[autocmd CursorMoved * ++once echo " "]]
 -- vim.api.nvim_create_autocmd('CursorMoved', { command = 'echo " "', group = group})
 vim.api.nvim_create_autocmd({'CursorMoved', 'InsertEnter'}, {
+    pattern = '*.py',
     callback = function(args)
         pcall(vim.api.nvim_buf_clear_namespace, args.buf, ns_id, 0, -1)
         print(" ")
