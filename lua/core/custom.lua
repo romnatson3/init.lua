@@ -32,8 +32,3 @@ vim.api.nvim_create_autocmd("VimEnter", {
 -- :%!jq
 vim.cmd([[command! FormatJson %!python -m json.tool ]])
 vim.cmd([[command! FormatXml %!python -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())" ]])
-
-
-vim.g.buf_is_changed = function()
-    return vim.fn.getbufinfo(vim.fn.bufnr())[1].changed == 1
-end

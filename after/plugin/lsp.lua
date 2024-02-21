@@ -1,6 +1,6 @@
 local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
-    vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
+    vim.keymap.set('n', 'gd', ':vsplit | lua vim.lsp.buf.definition()<cr>')
     -- vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
     vim.keymap.set('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>')
     vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')

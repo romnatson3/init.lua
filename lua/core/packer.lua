@@ -5,23 +5,23 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+    use({'wbthomason/packer.nvim'})
 
-    use {
+    use({
         'nvim-telescope/telescope.nvim',
         tag = '0.1.3',
         requires = { {'nvim-lua/plenary.nvim'} }
-    }
+    })
 
     -- colorscheme
-    use('sainnhe/sonokai')
-    use('ellisonleao/gruvbox.nvim')
+    use({'sainnhe/sonokai'})
+    use({'ellisonleao/gruvbox.nvim'})
     use({
         'catppuccin/nvim',
         as = 'catppuccin'
     })
-    use('rebelot/kanagawa.nvim')
-    use('folke/tokyonight.nvim')
+    use({'rebelot/kanagawa.nvim'})
+    use({'folke/tokyonight.nvim'})
     use({
         'rose-pine/neovim',
         as = 'rose-pine'
@@ -31,33 +31,33 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     })
-    use('nvim-treesitter/playground')
+    use({'nvim-treesitter/playground'})
 
-    use('ThePrimeagen/harpoon')
-    use('mbbill/undotree')
-    use('tpope/vim-fugitive')
-    use('tpope/vim-commentary')
+    use({'ThePrimeagen/harpoon'})
+    use({'mbbill/undotree'})
+    use({'tpope/vim-fugitive'})
+    use({'tpope/vim-commentary'})
 
-    use {
+    use({
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
         'neovim/nvim-lspconfig'
-    }
+    })
 
-    use {
+    use({
         'hrsh7th/nvim-cmp',
         'hrsh7th/cmp-nvim-lsp',
         'L3MON4D3/LuaSnip',
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path'
-    }
+    })
 
-    -- use {
+    -- use({
     --     'nvim-tree/nvim-tree.lua',
     --     requires = { {'nvim-tree/nvim-web-devicons'} }
-    -- }
+    -- })
 
-    use {
+    use({
         'nvim-neo-tree/neo-tree.nvim',
         branch = 'v3.x',
         requires = { 
@@ -65,47 +65,47 @@ return require('packer').startup(function(use)
             'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
             'MunifTanjim/nui.nvim',
         }
-    }
+    })
 
-    use {
+    use({
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
+    })
 
-    -- use {
+    -- use({
     --     'romgrk/barbar.nvim',
     --     requires = {
     --         {'nvim-tree/nvim-web-devicons'},
     --         {'lewis6991/gitsigns.nvim' },
     --     }
-    -- }
+    -- })
     
-    use('nanozuki/tabby.nvim')
+    -- use({'nanozuki/tabby.nvim'})
 
-    -- use('vim-scripts/AutoComplPop')
+    -- use({'vim-scripts/AutoComplPop'})
 
-    use('lukas-reineke/indent-blankline.nvim')
+    use({'lukas-reineke/indent-blankline.nvim'})
 
-    use {
+    use({
         'folke/trouble.nvim',
         requires = { 'nvim-tree/nvim-web-devicons' }
-    }
+    })
 
-    use('github/copilot.vim')
+    use({'github/copilot.vim'})
 
-    use('puremourning/vimspector')
+    use({'puremourning/vimspector'})
     
-    use {'akinsho/toggleterm.nvim', tag = '*',
+    use({'akinsho/toggleterm.nvim', tag = '*',
          config = function()
             require('toggleterm').setup()
         end
-    }
+    })
 
-    use {'norcalli/nvim-colorizer.lua',
+    use({'norcalli/nvim-colorizer.lua',
          config = function()
             require('colorizer').setup()
         end
-    }
+    })
 
     use({'preservim/tagbar',
         config = function()
@@ -113,6 +113,7 @@ return require('packer').startup(function(use)
         end
     })
 
-    use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+    use({'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'})
 
+    use({'chentoast/marks.nvim'})
 end)
