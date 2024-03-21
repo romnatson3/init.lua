@@ -72,13 +72,13 @@ return require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     })
 
-    -- use({
-    --     'romgrk/barbar.nvim',
-    --     requires = {
-    --         {'nvim-tree/nvim-web-devicons'},
-    --         {'lewis6991/gitsigns.nvim' },
-    --     }
-    -- })
+    use({
+        'romgrk/barbar.nvim',
+        requires = {
+            {'nvim-tree/nvim-web-devicons'},
+            {'lewis6991/gitsigns.nvim' },
+        }
+    })
     
     -- use({'nanozuki/tabby.nvim'})
 

@@ -1,12 +1,12 @@
 local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
-    vim.keymap.set('n', 'gd', ':vsplit | lua vim.lsp.buf.definition()<cr>')
+    -- vim.keymap.set('n', 'H', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
+    -- vim.keymap.set('n', 'gd', ':vsplit | lua vim.lsp.buf.definition()<cr>')
     -- vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
     vim.keymap.set('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>')
     vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
     vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
     vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
-    -- vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
 end
 
 require('mason').setup({})
@@ -28,19 +28,26 @@ require('lspconfig').pylsp.setup{
 
 -- require('lspconfig').pyright.setup({})
 
+
+-- local border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│"}
+local border = { "┌", "─", "┐", "│", "┘", "─", "└", "│"}
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text = false,
-    -- virtual_text = {
-    --     -- prefix = "",
-    --     prefix = "■",
-    --     spacing = 10,
-    -- },
-    underline = false,
-    update_in_insert = false,
-    signs = true,
-    severity_sort = true
-})
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+        virtual_text = false,
+        -- virtual_text = {
+        --     -- prefix = "",
+        --     prefix = "■",
+        --     spacing = 10,
+        -- },
+        underline = false,
+        update_in_insert = false,
+        signs = true,
+        severity_sort = true
+    }
+)
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border = border,})
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {border = border,})
 
 vim.fn.sign_define("DiagnosticSignError", {text = "", texthl = "DiagnosticSignError"})
 -- vim.fn.sign_define("DiagnosticSignError", {text = "×", texthl = "DiagnosticSignError"})
