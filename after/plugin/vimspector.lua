@@ -7,6 +7,8 @@ vim.keymap.set('n', '<leader><F12>', ':call vimspector#Reset()<CR>', {silent = t
 vim.keymap.set('n', '<leader><F1>', ':call vimspector#ClearBreakpoints()<CR>', {silent = true})
 vim.keymap.set('n', '<leader><F5>', ':call vimspector#Launch()<CR>', {silent = true})
 vim.keymap.set('n', '<leader><F6>', ':call vimspector#Continue()<CR>', {silent = true})
+vim.keymap.set('n', '<leader><F7>', ':call vimspector#StepOver()<CR>', {silent = true})
+vim.keymap.set('n', '<leader><F8>', ':call vimspector#StepInto()<CR>', {silent = true})
 
 -- .vimspector.json, copy this file to project folder
 -- {

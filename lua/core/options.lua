@@ -31,7 +31,7 @@ vim.opt.foldenable = false
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
+-- vim.opt.scrolloff = 8
 vim.opt.signcolumn = 'yes'
 
 vim.opt.updatetime = 50
@@ -41,3 +41,5 @@ vim.opt.completeopt = 'menu,menuone,noinsert,longest'
 -- vim.opt.wrap = false
 
 vim.opt.listchars = 'eol:↲,tab:→→,trail:•,nbsp:↔'
+
+vim.opt.wildignore:append { '*/env/*', '*/.git/*', '*/migrations/*', '*/logs/*'}
