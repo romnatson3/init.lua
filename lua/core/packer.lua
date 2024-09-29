@@ -93,7 +93,15 @@ return require('packer').startup(function(use)
 
     use({'github/copilot.vim'})
 
-    use({'puremourning/vimspector'})
+    -- use({'puremourning/vimspector'})
+
+    use({'mfussenegger/nvim-dap'}) 
+    use({'mfussenegger/nvim-dap-python'})
+    use({'Weissle/persistent-breakpoints.nvim'})
+    use({
+        'rcarriga/nvim-dap-ui',
+        requires = {'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio'} 
+    })
     
     use({'akinsho/toggleterm.nvim', tag = '*',
          config = function()

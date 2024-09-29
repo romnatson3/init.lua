@@ -39,3 +39,6 @@ vim.keymap.set({'n', 'v'}, 'y', [["+y]])
 -- vim.keymap.set('n', '<C-x>', ':vertical resize +1<CR>')
 -- vim.keymap.set('n', '<C-j>', ':horizontal resize -1<CR>')
 -- vim.keymap.set('n', '<C-k>', ':horizontal resize +1<CR>')
+
+vim.keymap.set('n', '<leader>i', '<C-i>')
+vim.keymap.set('n', '<leader>o', '<C-o>')
