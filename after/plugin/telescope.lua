@@ -7,8 +7,11 @@ vim.keymap.set('n', '<leader>g', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 vim.keymap.set('n', '<leader>m', builtin.marks, {})
 vim.keymap.set('n', '<leader>p', builtin.registers, {})
+vim.keymap.set('n', '<leader>q', builtin.quickfix, {})
+vim.keymap.set('n', '<leader>qh', builtin.quickfixhistory, {})
 vim.keymap.set('n', 'gr', builtin.lsp_references, {})
 vim.keymap.set('n', 'gd', builtin.lsp_definitions, {})  -- Ctrl-o go back
+vim.keymap.set('n', 'gc', builtin.git_commits, {})
 
 vim.keymap.set('n', '<leader>/', function()
     builtin.current_buffer_fuzzy_find(themes.get_dropdown {
@@ -50,6 +53,7 @@ require('telescope').setup {
         },
         live_grep = {
             additional_args = {'--hidden'}
+            -- additional_args = {'--hidden', '--fixed-strings'}
         }
     }
 }
