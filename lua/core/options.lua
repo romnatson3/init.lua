@@ -42,4 +42,4 @@ vim.opt.completeopt = 'menu,menuone,noinsert,longest'
 
 vim.opt.listchars = 'eol:↲,tab:→→,trail:•,nbsp:↔'
 
-vim.opt.wildignore:append { '*/env/*', '*/.git/*', '*/migrations/*', '*/logs/*'}
+vim.opt.wildignore:append { '*/env/*', '*/.git/*', '*/migrations/*', '*/logs/*', '*.pyc', '*.json'}
