@@ -111,3 +111,5 @@ bufferline.setup {
         },
     }
 }
+
+vim.opt.showtabline = 0  -- hide tabline, set to 2 to show

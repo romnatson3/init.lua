@@ -2,27 +2,34 @@ local builtin = require('telescope.builtin')
 local themes = require('telescope.themes')
 
 vim.keymap.set('n', '<leader>f', builtin.find_files, {})
--- vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>g', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 vim.keymap.set('n', '<leader>m', builtin.marks, {})
-vim.keymap.set('n', '<leader>p', builtin.registers, {})
+-- vim.keymap.set('n', '<leader>p', builtin.registers, {})
 vim.keymap.set('n', '<leader>q', builtin.quickfix, {})
 vim.keymap.set('n', '<leader>qh', builtin.quickfixhistory, {})
 vim.keymap.set('n', 'gr', builtin.lsp_references, {})
 vim.keymap.set('n', 'gd', builtin.lsp_definitions, {})  -- Ctrl-o go back
 vim.keymap.set('n', 'gc', builtin.git_commits, {})
 
-vim.keymap.set('n', '<leader>/', function()
-    builtin.current_buffer_fuzzy_find(themes.get_dropdown {
+vim.keymap.set('n', '<leader>B', function()
+    builtin.buffers(themes.get_dropdown {
         winblend = 10,
         previewer = false,
-        layout_config = {
-            width = 0.5,
-            height = 0.7,
-        }
+        layout_config = { prompt_position = 'bottom', width = 0.3, height = 0.5 }
     })
-end, { desc = '[/] Fuzzily search in current buffer' })
+end)
+
+vim.keymap.set('n', '<leader>/', function()
+    builtin.current_buffer_fuzzy_find({
+        theme = 'dropdown',
+        winblend = 0,
+        previewer = false,
+        layout_config = { prompt_position = 'bottom', width = 0.5, height = 0.7 },
+        sorter = require('telescope.sorters').get_substr_matcher({}),
+    })
+end)
+
+vim.api.nvim_set_hl(0, 'TelescopeMatching', { fg = '#ff9900', bold = true })
 
 -- vim.keymap.set('n', '<leader>G', builtin.grep_string, {})
 
