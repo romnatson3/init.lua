@@ -94,12 +94,6 @@ return require('packer').startup(function(use)
         requires = {'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio'} 
     }
     
-    use {'akinsho/toggleterm.nvim', tag = '*',
-         config = function()
-            require('toggleterm').setup()
-        end
-    }
-
     use {'norcalli/nvim-colorizer.lua',
          config = function()
             require('colorizer').setup()

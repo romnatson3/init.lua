@@ -99,7 +99,7 @@ bufferline.setup {
             delay = 200,
             reveal = {'close'}
         },
-        sort_by = 'insert_after_current', --'insert_at_end' | 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' 
+        sort_by = 'insert_at_end', -- 'insert_after_current' | 'insert_at_end' | 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' 
             -- | function(buffer_a, buffer_b)
             --      -- add custom logic
             --     local modified_a = vim.fn.getftime(buffer_a.path)
@@ -112,4 +112,4 @@ bufferline.setup {
     }
 }
 
-vim.opt.showtabline = 0  -- hide tabline, set to 2 to show
+-- vim.opt.showtabline = 0  -- hide tabline, set to 2 to show

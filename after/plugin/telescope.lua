@@ -15,7 +15,7 @@ vim.keymap.set('n', '<leader>B', function()
     builtin.buffers(themes.get_dropdown {
         winblend = 10,
         previewer = false,
-        layout_config = { prompt_position = 'bottom', width = 0.3, height = 0.5 }
+        layout_config = { prompt_position = 'bottom', width = 0.3, height = 0.4 }
     })
 end)
 
