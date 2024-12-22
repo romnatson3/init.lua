@@ -12,7 +12,6 @@ vim.keymap.set('n', '<leader>c', vim.cmd.bdelete)
 vim.keymap.set({'i', 'n','v'}, '<F1>', '<esc>:nohlsearch<CR>')
 vim.keymap.set({'n','i','v'}, '<F9>', ':call ToggleMouse()<CR>')
 vim.keymap.set({'n','i','v'}, '<F8>', '<esc>:set invpaste paste?<CR>')
-vim.keymap.set('n', '<leader>d', ':TroubleToggle<CR>')
 
 vim.keymap.set('v', 'L', '>gv')
 vim.keymap.set('v', 'H', '<gv')
