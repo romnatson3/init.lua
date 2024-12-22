@@ -8,11 +8,11 @@ require('persistent-breakpoints').setup{
 }
 require('dap-python').setup('python')
 
--- dap.adapters.python = {
---     type = 'executable';
---     command = 'python';
---     args = { '-m', 'debugpy.adapter' };
--- }
+dap.adapters.python = {
+    type = 'executable';
+    command = 'python';
+    args = { '-m', 'debugpy.adapter' };
+}
 
 dap.configurations.python = {
     {

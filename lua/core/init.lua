@@ -1,5 +1,6 @@
 require('core.keymaps')
 require('core.options')
 require('core.colorscheme')
-require('core.custom')
+require('core.misc')
+require('core.terminal')
 require('core.packer')
