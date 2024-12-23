@@ -44,7 +44,10 @@ return {
         require('ufo').setup({
             fold_virt_text_handler = handler,
             open_fold_hl_timeout = 150,
-            close_fold_kinds = {'imports', 'comment'},
+            close_fold_kinds_for_ft = {
+                lua = {'imports', 'comment'},
+                python = {'imports', 'docstring'},
+            },
             preview = {
                 win_config = {
                     border = {'', '─', '', '', '', '─', '', ''},
