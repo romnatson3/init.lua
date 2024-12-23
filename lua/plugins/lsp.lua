@@ -9,7 +9,7 @@ return {
         'williamboman/mason-lspconfig.nvim',
         config = function()
             require('mason-lspconfig').setup({
-                ensure_installed = {'pylsp', 'pyright', 'html'},
+                ensure_installed = {'pylsp', 'pyright', 'html', 'lua_ls'},
             })
         end
     },
@@ -43,6 +43,11 @@ return {
             }
 
             -- require('lspconfig').pyright.setup({})
+
+            require('lspconfig').lua_ls.setup{
+                capabilities = capabilities,
+                on_attach = on_attach,
+            }
 
 
             -- local border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│"}
@@ -117,7 +122,8 @@ return {
             -- vim.cmd[[autocmd CursorMoved * ++once echo " "]]
             -- vim.api.nvim_create_autocmd('CursorMoved', { command = 'echo " "', group = group})
             vim.api.nvim_create_autocmd({'CursorMoved', 'InsertEnter'}, {
-                pattern = '*.py',
+                -- pattern = '*.py',
+                pattern = {'*.py', '*.lua'},
                 callback = function(args)
                     pcall(vim.api.nvim_buf_clear_namespace, args.buf, ns_id, 0, -1)
                     print(" ")

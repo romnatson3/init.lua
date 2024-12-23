@@ -6,11 +6,11 @@ return {
             local dap = require('dap')
             local dapui = require('dapui')
 
-            -- dap.adapters.python = {
-            --     type = 'executable';
-            --     command = 'python';
-            --     args = { '-m', 'debugpy.adapter' };
-            -- }
+            dap.adapters.python = {
+                type = 'executable';
+                command = 'python';
+                args = { '-m', 'debugpy.adapter' };
+            }
 
             dap.configurations.python = {
                 {
