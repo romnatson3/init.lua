@@ -1,14 +1,49 @@
 return {
     {
-        { 
-            'sainnhe/sonokai' ,
+        {
+            "folke/tokyonight.nvim",
+            lazy = false,
+            priority = 1000,
+            opts = {},
             config = function()
-                vim.g.sonokai_style = 'maia' -- default, shusia, atlantis, andromeda, maia, espresso
-                vim.cmd('colorscheme sonokai')
+                -- vim.cmd('colorscheme tokyonight')
             end
         },
-        { 'catppuccin/nvim' },
+
+        {
+            'sainnhe/sonokai' ,
+            enabled = true,
+            config = function()
+                vim.g.sonokai_style = 'maia' -- default, shusia, atlantis, andromeda, maia, espresso
+                -- vim.cmd('colorscheme sonokai')
+            end
+        },
+
+        {
+            "catppuccin/nvim",
+            name = "catppuccin",
+            priority = 1000,
+            config = function()
+                -- vim.cmd('colorscheme catppuccin')
+            end
+        },
+
+        {
+            'projekt0n/github-nvim-theme',
+            name = 'github-theme',
+            lazy = false, -- make sure we load this during startup if it is your main colorscheme
+            priority = 1000, -- make sure to load this before all the other start plugins
+            config = function()
+                require('github-theme').setup({
+                    -- ...
+                })
+
+                -- vim.cmd('colorscheme github_dark_dimmed')
+            end,
+        },
+
         { 'rebelot/kanagawa.nvim' },
+
         { 'folke/tokyonight.nvim' },
 
         {
@@ -18,9 +53,11 @@ return {
             end
         },
 
-        { 
+        {
             'ellisonleao/gruvbox.nvim',
+            enabled = true,
             lazy = false,
+            priority = 1000,
             config = function()
                 -- setup must be called before loading the colorscheme
                 -- Default options:
@@ -49,14 +86,7 @@ return {
                     transparent_mode = true,
                 })
 
-                -- vim.cmd('colorscheme gruvbox')
-
-                -- set colorscheme specific highlights if colorscheme is gruvbox
-                vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
-                vim.api.nvim_set_hl(0, 'LineNr', { fg = '#4e4e4e' })
-                vim.api.nvim_set_hl(0, 'DiagnosticSignError', { bg = 'none', fg = '#fb4934' })
-                vim.api.nvim_set_hl(0, 'DiagnosticSignWarn', { bg = 'none', fg = '#fabd2f' })
-                vim.api.nvim_set_hl(0, 'DiagnosticSignHint', { bg = 'none', fg = '#8ec07c' })
+                vim.cmd('colorscheme gruvbox')
             end
         },
     }

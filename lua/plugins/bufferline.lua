@@ -1,9 +1,11 @@
 return {
     {
         'akinsho/bufferline.nvim',
+        priority = 10,
+        lazy = false,
         version = "*",
         dependencies = 'nvim-tree/nvim-web-devicons',
-    
+
         config = function()
             local bufferline = require('bufferline')
             bufferline.setup {
@@ -97,7 +99,7 @@ return {
                     move_wraps_at_ends = false, -- whether or not the move command "wraps" at the first or last position
                     -- can also be a table containing 2 custom separators
                     -- [focused and unfocused]. eg: { '|', '|' }
-                    separator_style = "slant",  -- "slant" | "slope" | "thick" | "thin" | { 'any', 'any' },
+                    separator_style = "thin",  -- "slant" | "slope" | "thick" | "thin" | { 'any', 'any' },
                     enforce_regular_tabs = false,
                     always_show_bufferline = true,
                     auto_toggle_bufferline = true,
@@ -119,7 +121,6 @@ return {
                 }
             }
 
-            -- vim.opt.showtabline = 0  -- hide tabline, set to 2 to show
         end
     },
 }

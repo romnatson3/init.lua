@@ -6,6 +6,7 @@ return {
             options = {
                 icons_enabled = true,
                 -- theme = 'seoul256',
+                -- theme = 'github_dark_dimmed',
                 theme = 'gruvbox',
                 -- theme = 'rose-pine',
                 -- theme = 'sonokai',

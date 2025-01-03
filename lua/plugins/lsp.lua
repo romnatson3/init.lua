@@ -6,7 +6,7 @@ return {
         end
     },  
     {
-        'williamboman/mason-lspconfig.nvim',
+        'illiamboman/mason-lspconfig.nvim',
         config = function()
             require('mason-lspconfig').setup({
                 ensure_installed = {'pylsp', 'pyright', 'html', 'lua_ls'},
@@ -70,24 +70,6 @@ return {
             vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border = border,})
             vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {border = border,})
 
-            vim.fn.sign_define("DiagnosticSignError", {text = "", texthl = "DiagnosticSignError"})
-            -- vim.fn.sign_define("DiagnosticSignError", {text = "×", texthl = "DiagnosticSignError"})
-            -- vim.fn.sign_define("DiagnosticSignError", {text = "✘", texthl = "DiagnosticSignError"})
-            -- vim.fn.sign_define("DiagnosticSignError", {text = "", texthl = "DiagnosticSignError"})
-            vim.fn.sign_define("DiagnosticSignWarn", {text = "", texthl = "DiagnosticSignWarn"})
-            -- vim.fn.sign_define("DiagnosticSignWarn", {text = "", texthl = "DiagnosticSignWarn"})
-            vim.fn.sign_define("DiagnosticSignInfo", {text = "", texthl = "DiagnosticSignInfo"})
-            -- vim.fn.sign_define("DiagnosticSignInfo", {text = "¡", texthl = "DiagnosticSignInfo"})
-            vim.fn.sign_define("DiagnosticSignHint", {text = "󰌵", texthl = "DiagnosticSignHint"})
-
-            -- vim.api.nvim_set_hl(0, "DiagnosticVirtualText", { fg = "#4e4e4e" })
-            vim.api.nvim_set_hl(0, "DiagnosticVirtualText", { fg = "#00ff80", underline=true })
-            vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { link = "DiagnosticVirtualText" })
-            vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { link = "DiagnosticVirtualText" })
-            vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", { link = "DiagnosticVirtualText" })
-            vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { link = "DiagnosticVirtualText" })
-
-
             local ns_id = vim.api.nvim_create_namespace('Diagnostic')
             local hi = { 'Error', 'Warn','Info','Hint'}
             local group = vim.api.nvim_create_augroup('Diagnostic', {clear=true})
@@ -119,10 +101,7 @@ return {
                 group = group
             })
 
-            -- vim.cmd[[autocmd CursorMoved * ++once echo " "]]
-            -- vim.api.nvim_create_autocmd('CursorMoved', { command = 'echo " "', group = group})
             vim.api.nvim_create_autocmd({'CursorMoved', 'InsertEnter'}, {
-                -- pattern = '*.py',
                 pattern = {'*.py', '*.lua'},
                 callback = function(args)
                     pcall(vim.api.nvim_buf_clear_namespace, args.buf, ns_id, 0, -1)
